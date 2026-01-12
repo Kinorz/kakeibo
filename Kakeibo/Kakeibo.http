@@ -1,0 +1,23 @@
+@Kakeibo_HostAddress = http://localhost:5043
+
+GET {{Kakeibo_HostAddress}}/api/transactions
+Accept: application/json
+
+###
+
+POST {{Kakeibo_HostAddress}}/api/transactions
+Content-Type: application/json
+
+{
+	"date": "2026-01-13",
+	"amount": -1200,
+	"category": "Lunch",
+	"memo": "Ramen"
+}
+
+###
+
+GET {{Kakeibo_HostAddress}}/api/transactions/1
+Accept: application/json
+
+###
