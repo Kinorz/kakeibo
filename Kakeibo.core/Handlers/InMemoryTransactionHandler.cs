@@ -4,7 +4,7 @@ using Kakeibo.Core.Models;
 
 namespace Kakeibo.Core.Handlers;
 
-public sealed class InMemoryTransactionHandler : ITransactionHandler
+public sealed class InMemoryTransactionHandler
 {
     private readonly ConcurrentDictionary<int, Transaction> _store = new();
     private int _lastId;

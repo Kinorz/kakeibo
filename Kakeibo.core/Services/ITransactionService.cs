@@ -8,4 +8,5 @@ public interface ITransactionService
     Task<Transaction?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
     Task<Transaction> CreateAsync(CreateTransactionRequest request, CancellationToken cancellationToken = default);
     Task<bool> DeleteAsync(int id, CancellationToken cancellationToken = default);
+    Task<IReadOnlyList<CategoryWithMemosAndTransactions>?> GroupJoinPractice(CancellationToken cancellationToken = default);
 }

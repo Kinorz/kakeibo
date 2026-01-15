@@ -12,8 +12,9 @@ public sealed class TransactionEntity
     [Precision(18, 2)]
     public decimal Amount { get; set; }
 
-    [MaxLength(100)]
-    public required string Category { get; set; }
+    public int CategoryId { get; set; }
+
+    public CategoryEntity? Category { get; set; }
 
     [MaxLength(500)]
     public string? Memo { get; set; }

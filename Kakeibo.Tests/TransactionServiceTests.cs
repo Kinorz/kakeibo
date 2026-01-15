@@ -107,4 +107,15 @@ public sealed class TransactionServiceTests
             }
         }
     }
+
+    [Fact]
+    public async Task GroupJoinPractice()
+    {
+        await using var factory = new SqlServerTestAppFactory();
+        using var scope = factory.Services.CreateScope();
+        var service = scope.ServiceProvider.GetRequiredService<ITransactionService>();
+
+        var r1 = await service.GroupJoinPractice();
+        //Assert.NotNull(r1);
+    }
 }

@@ -5,9 +5,9 @@ namespace Kakeibo.Core.Services;
 
 public sealed class TransactionService : ITransactionService
 {
-    private readonly ITransactionHandler _handler;
+    private readonly EfTransactionHandler _handler;
 
-    public TransactionService(ITransactionHandler handler)
+    public TransactionService(EfTransactionHandler handler)
     {
         _handler = handler;
     }
@@ -35,4 +35,7 @@ public sealed class TransactionService : ITransactionService
 
     public Task<bool> DeleteAsync(int id, CancellationToken cancellationToken = default)
         => _handler.DeleteAsync(id, cancellationToken);
+
+    public Task<IReadOnlyList<CategoryWithMemosAndTransactions>?> GroupJoinPractice(CancellationToken cancellationToken = default)
+        => _handler.GroupJoinPractice(cancellationToken);
 }
